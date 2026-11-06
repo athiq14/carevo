@@ -1,0 +1,58 @@
+# Python virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Streamlit run files
+.streamlit/secrets.toml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Scratchpad and temporary development scripts
+scratch/
+
+# Database files & candidate data
+*.db
+*.sqlite
+*.sqlite3
+career_intelligence.db
+
+# User uploaded resumes and private documents
+*.pdf
+*.docx
+*.doc
+uploads/
+resumes/
+
+# Logs and runtime traces
+*.log
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test & Playwright outputs
+test-results/
+playwright-report/
+
+

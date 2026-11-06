@@ -1,0 +1,20 @@
+<svg width="220" height="48" viewBox="0 0 220 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="carevo-logo-accent" x1="6" y1="8" x2="42" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#B895FF"/>
+    </linearGradient>
+    <linearGradient id="carevo-logo-bg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#16192E"/>
+      <stop offset="100%" stop-color="#0E1020"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon Mark -->
+  <rect width="44" height="44" x="2" y="2" rx="12" fill="url(#carevo-logo-bg)" stroke="rgba(139, 92, 246, 0.35)" stroke-width="1.2"/>
+  <path d="M31 16.5C29 13.8 25.6 12 21.8 12C15.3 12 10 17.3 10 23.8C10 30.3 15.3 35.6 21.8 35.6C25.6 35.6 29 33.8 31 31.1" 
+        stroke="url(#carevo-logo-accent)" stroke-width="3.8" stroke-linecap="round"/>
+  <circle cx="31" cy="16.5" r="2.8" fill="#B895FF"/>
+  <!-- Wordmark -->
+  <text x="58" y="27" fill="#F5F3FA" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" letter-spacing="0.04em">CAREVO</text>
+  <text x="58" y="39" fill="#8B92A5" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" letter-spacing="0.03em">AI CAREER PLATFORM</text>
+</svg>

@@ -1,0 +1,12 @@
+streamlit>=1.35.0
+pandas>=2.2.0
+pymupdf>=1.24.0
+python-dotenv>=1.0.1
+pydantic>=2.7.0
+google-genai>=2.0.0,<3.0.0
+groq>=1.7.0,<2.0.0
+pytest>=8.2.0
+langgraph==1.2.20
+langgraph-checkpoint==4.3.1
+
+

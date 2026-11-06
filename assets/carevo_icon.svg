@@ -1,0 +1,19 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="carevo-accent" x1="6" y1="8" x2="42" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#B895FF"/>
+    </linearGradient>
+    <linearGradient id="carevo-bg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#16192E"/>
+      <stop offset="100%" stop-color="#0E1020"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Container -->
+  <rect width="48" height="48" rx="13" fill="url(#carevo-bg)" stroke="rgba(139, 92, 246, 0.35)" stroke-width="1.2"/>
+  <!-- Minimalist Geometric C Arc with Forward Momentum -->
+  <path d="M33 17.5C30.8 14.5 27.2 12.5 23 12.5C15.82 12.5 10 18.32 10 25.5C10 32.68 15.82 38.5 23 38.5C27.2 38.5 30.8 36.5 33 33.5" 
+        stroke="url(#carevo-accent)" stroke-width="4.2" stroke-linecap="round"/>
+  <!-- Progression Ascent Node -->
+  <circle cx="33" cy="17.5" r="3" fill="#B895FF"/>
+</svg>
