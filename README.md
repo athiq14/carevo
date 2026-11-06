@@ -9,10 +9,9 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue?style=flat-square&logo=python&logoColor=white" alt="Python Version" />
-  <img src="https://img.shields.io/badge/Tests-651%20passed%20(100%25)-36D399?style=flat-square&logo=pytest&logoColor=white" alt="Tests" />
+  <img src="https://img.shields.io/badge/Tests-651%20passed-36D399?style=flat-square&logo=pytest&logoColor=white" alt="Tests" />
   <img src="https://img.shields.io/badge/Orchestration-LangGraph%201.2-8B5CF6?style=flat-square" alt="LangGraph" />
   <img src="https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit" />
-  <img src="https://img.shields.io/badge/License-Apache%202.0-8B92A5?style=flat-square" alt="License" />
 </p>
 
 ---
@@ -21,7 +20,7 @@
 
 CAREVO helps students, graduates, professionals and career changers understand their qualifications, evaluate job opportunities, identify skill gaps and plan their next career move using AI.
 
-Unlike generic career bots that generate ungrounded praise or hallucinated ratings, CAREVO evaluates real candidate evidence, enforces mathematical anti-inflation scoring, and coordinates specialized agents with human-in-the-loop review. It is built for both **technical disciplines** (software engineering, data analytics, cloud) and **non-technical professions** (mortgage lending, insurance, real estate consulting, human resources, finance, and operations).
+Unlike generic career bots that generate ungrounded praise or hallucinated ratings, CAREVO evaluates real candidate evidence, enforces mathematical anti-inflation scoring, and coordinates specialized agents with human-in-the-loop review. It supports both **technical disciplines** (software engineering, data analytics, cloud) and **non-technical professions** (mortgage lending, insurance, real estate consulting, human resources, finance, and operations).
 
 ---
 
@@ -29,13 +28,15 @@ Unlike generic career bots that generate ungrounded praise or hallucinated ratin
 
 Watch a short demonstration of CAREVO, including resume analysis, job matching, personalized career guidance and AI-powered agent workflows:
 
+<!-- VIDEO_LINK: Replace the Google Drive URL below with a direct individual video URL when ready -->
 <p align="center">
   <a href="https://drive.google.com/drive/folders/1mDp85tE53p_ldbEG9pjeEyhezURaYNaJ?usp=sharing" target="_blank">
     <img src="assets/readme/demo-walkthrough-thumbnail.png" alt="CAREVO 5-Minute Video Walkthrough" width="850" />
   </a>
 </p>
 
-> 🔗 **Direct Demo Link:** [Watch the Full 5-Minute Walkthrough on Google Drive](https://drive.google.com/drive/folders/1mDp85tE53p_ldbEG9pjeEyhezURaYNaJ?usp=sharing)
+> 🔗 **Demo Video Link:** [Watch the Full 5-Minute Walkthrough on Google Drive](https://drive.google.com/drive/folders/1mDp85tE53p_ldbEG9pjeEyhezURaYNaJ?usp=sharing)  
+> *(This link can be replaced directly with an individual video URL or recording)*
 
 ---
 
@@ -43,13 +44,13 @@ Watch a short demonstration of CAREVO, including resume analysis, job matching, 
 
 CAREVO treats evaluation rigor as a core engineering invariant. Every scoring formula, state transition, and privacy boundary is verified via reproducible automated test suites.
 
-| Metric | Result | Benchmark Status |
+| Verification Check | Result | Implementation Scope |
 |---|---|---|
-| **Automated Test Suite** | **651 / 651 Passed (100%)** | 0 failures across 38 suites |
-| **Optimized Bytecode Execution** | **651 / 651 Passed (100%)** | Verified under `python -O` (non-assert immutability) |
-| **Score Immutability** | **100% Cryptographically Protected** | SHA-256 match fingerprint verified before & after agent steps |
-| **Deterministic Consistency** | **100% Reproducible** | Identical inputs guarantee identical scores and weights |
-| **Secret Redaction** | **Zero API Key Leakage** | Automated regex sanitization across all logs and error traces |
+| **Automated Test Suite** | **651 / 651 Passed** | 0 failures across 38 suites (Pytest 9.2.0) |
+| **Optimized Bytecode Execution** | **651 / 651 Passed** | Verified under `python -O` (non-assert immutability enforcement) |
+| **Score Immutability** | **SHA-256 Verified Snapshots** | SHA-256 digest checks verify match fields before and after agent nodes |
+| **Deterministic Scoring** | **Closed-Form Formula Consistency** | Offline Python matching engine computes scores from exact criteria |
+| **Secret Redaction** | **Automated Regex Sanitization** | `redact_secrets()` filters API key patterns (`AIzaSy...`, `gsk_...`, `sk-...`) in logs and traces |
 
 <p align="center">
   <img src="assets/readme/test-distribution.png" alt="CAREVO Automated Test Distribution" width="850" />
@@ -94,11 +95,11 @@ The home dashboard tracks real-time system status, candidate profile state, acti
 ![Main Dashboard](assets/readme/01_home_dashboard.png)
 
 ### 2. CAREVO Profile (Resume Extraction)
-Uploaded PDF resumes are processed entirely in memory via PyMuPDF. Contact information is scrubbed, canonical sections are detected, and skills, experience tenure, and STAR project achievements are structured into an immutable profile.
+Uploaded PDF resumes are processed in memory via PyMuPDF. Personal contact info is scrubbed, canonical sections are detected, and skills, experience tenure, and STAR achievements are extracted into an immutable profile.
 ![Resume Analysis](assets/readme/02_resume_analysis.png)
 
 ### 3. CAREVO Match (Deterministic Qualification Alignment)
-Evaluates candidates against four core dimensions (Skills, Experience, Education, Projects). If an employer description omits criteria, the engine enforces strict **60% anti-inflation ceilings** rather than artificially inflating single-skill candidates to 100%. Sparse postings (< 3 technical skills or < 4 total requirements) trigger an amber **Provisional Evaluation** warning.
+Evaluates candidates against four core dimensions (Skills, Experience, Education, Projects). When criteria are missing, the engine enforces strict **60% anti-inflation ceilings** rather than artificially inflating single-skill candidates to 100%. Sparse postings (< 3 technical skills or < 4 total requirements) trigger a **Provisional Evaluation** warning.
 ![Job Matching Results](assets/readme/03_job_matching.png)
 
 ### 4. CAREVO Guide (Role-Aware Career Roadmaps)
@@ -134,7 +135,7 @@ Coordinates specialized AI agents (Triage, Remediation, Resume Optimization, Int
 ### The Core Architectural Principle
 > **CAREVO separates numerical evaluation from AI-generated explanations.**
 
-- **The Deterministic Engine** is the sole authority for compatibility scores. Python evaluates skills, experience tenure, and education credentials offline.
+- **The Deterministic Engine** is the sole authority for compatibility scores. Python evaluates skills, experience tenure, and education credentials offline using closed-form calculations.
 - **The LLM** explains the evidence, highlights gaps, and recommends improvements; it **cannot independently calculate or alter the numerical score**.
 - **LangGraph** orchestrates specialized agents with typed state reducers and bounded self-correction cycles.
 - **Human Approval Checkpoints** allow users to inspect deliverables, request changes, or approve the final synthesis.
@@ -175,7 +176,7 @@ Coordinates specialized AI agents (Triage, Remediation, Resume Optimization, Int
 - **Document Processing:** PyMuPDF (`pymupdf` 1.24+) for stream parsing and character density OCR heuristics
 - **Data Modeling:** Pydantic V2 (`frozen=True` immutable schemas)
 - **Primary AI Provider:** Groq Cloud SDK (`openai/gpt-oss-120b`)
-- **Secondary Fallback:** Google GenAI SDK (`gemini-3.8-flash` / `gemini-2.5-flash`)
+- **Secondary Fallback:** Google GenAI SDK (`gemini-3.8-flash`, configured in `config.py`)
 - **Web Intelligence:** HTTPX with DuckDuckGo HTTP search (no API key required)
 - **Testing:** Pytest (651 tests across 38 suites)
 
@@ -255,7 +256,7 @@ python -O -m pytest tests/ -q
 ### Current Limitations
 - **Scanned PDFs:** Purely image-based PDFs lacking a text layer are flagged with `requires_ocr=True`; local image OCR (e.g. Tesseract) is not yet integrated.
 - **In-Memory Checkpoints:** LangGraph workflow sessions use in-memory `MemorySaver` and do not persist across Streamlit server restarts.
-- **Ground-Truth Benchmarks:** While mathematical reproducibility is 100%, empirical hiring prediction accuracy has not yet been established against an external labelled dataset.
+- **Ground-Truth Benchmarks:** While the offline scoring engine is deterministic across test fixtures, empirical hiring prediction accuracy has not yet been established against an external labelled dataset.
 
 ### Planned Improvements
 - [ ] Assemble an open 1,000-sample resume-to-JD paired dataset with hiring manager ground-truth annotations.
@@ -271,8 +272,3 @@ python -O -m pytest tests/ -q
 - **GitHub:** [@athiq14](https://github.com/athiq14)  
 - **LinkedIn:** [linkedin.com/in/athiq14](https://www.linkedin.com/in/athiq14/)  
 - **Repository:** [https://github.com/athiq14/carevo](https://github.com/athiq14/carevo)
-
----
-
-## 📄 License
-Licensed under the [Apache License 2.0](LICENSE).
